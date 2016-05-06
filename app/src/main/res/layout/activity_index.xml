@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:orientation="vertical"
+    tools:context=".activity.IndexActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@android:color/holo_green_light"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/log_image"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:src="@android:drawable/btn_star_big_on" />
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:text="@string/titile"/>
+
+        <RelativeLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_pengOrder_number"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="30dp"
+
+                android:gravity="center"
+                android:textColor="@android:color/holo_red_dark"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/btn_product_order_time"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_margin="5dp"
+
+                android:gravity="center"
+                android:padding="5dp" />
+
+            <TextView
+                android:id="@+id/btn_product_order_sub"
+                android:layout_width="36dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="5dp"
+                android:layout_toLeftOf="@id/btn_product_order_time"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="-" />
+
+            <TextView
+                android:id="@+id/btn_product_order_add"
+                android:layout_width="36dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="5dp"
+                android:layout_toLeftOf="@id/btn_product_order_sub"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="+"
+                />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/MerchantManagement_textview"
+                android:layout_width="100dp"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:text="@string/MerchantManagement"/>
+            <ImageView
+                android:id="@+id/mypic_imageview"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:src="@drawable/my_pic"/>
+            <TextView
+                android:layout_width="80dp"
+                android:text="yonhuming"
+                android:gravity="center"
+                android:layout_height="match_parent" />
+            <ImageView
+
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/wifi"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:layout_marginRight="8dp"
+                android:text="@string/settleaccounts"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:id="@+id/productlist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+                <TextView
+                    android:id="@+id/chargeback_textview"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/chargeback"/>
+                <TextView
+                    android:id="@+id/cashbox_textview"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/cashbox"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent">
+                    <EditText
+                        android:id="@+id/et_dish_search"
+                        android:layout_width="220dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/search_textview"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginTop="2dp"
+                        android:background="@null"
+                        android:gravity="left|center"
+                        android:textSize="14sp" />
+
+                    <TextView
+
+                        android:id="@+id/search_textview"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="16dp"
+                        android:gravity="center"
+                        android:text="搜索" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!--<LinearLayout-->
+                <!--android:id="@+id/menu_layout"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="60dp">-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/all_textview"-->
+                    <!--android:layout_width="60dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:gravity="center"-->
+                    <!--android:text="@string/all"/>-->
+                <!--<TextView-->
+                    <!--android:id="@+id/meat_textview"-->
+                    <!--android:layout_width="60dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:gravity="center"-->
+                    <!--android:text="@string/meat"/>-->
+                <!--<TextView-->
+                    <!--android:id="@+id/greens_textview"-->
+                    <!--android:layout_width="60dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:gravity="center"-->
+                    <!--android:text="@string/greens"/>-->
+                <!--<TextView-->
+                    <!--android:id="@+id/birds_textview"-->
+                    <!--android:layout_width="60dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:gravity="center"-->
+                    <!--android:text="@string/birds"/>-->
+                <!--<TextView-->
+                    <!--android:id="@+id/seafood_textview"-->
+                    <!--android:layout_width="60dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:gravity="center"-->
+                    <!--android:text="@string/seafood"/>-->
+                <!--<TextView-->
+                    <!--android:id="@+id/drycargo_textview"-->
+                    <!--android:layout_width="60dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:gravity="center"-->
+                    <!--android:text="@string/dryCargo"/>-->
+
+            <!--</LinearLayout>-->
+
+            <FrameLayout
+                android:id="@+id/fragment_product"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3">
+
+            <FrameLayout
+                android:id="@+id/fragment_product_info"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2.5"
+                android:background="@android:color/darker_gray" >
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

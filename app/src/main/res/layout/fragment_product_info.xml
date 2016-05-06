@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:background="@color/bg_gray_list"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:layout_weight="2"
+        android:background="@color/bg_graylight_list"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/lv_product_take_order"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray"
+                android:gravity="center" />
+
+            <LinearLayout
+                android:id="@+id/ll_total_info"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="invisible"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:gravity="right|center"
+                        android:text="合计：" />
+
+                    <TextView
+                        android:id="@+id/tv_total_price"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:gravity="left|center"
+                        android:text="￥124.0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:gravity="right|center"
+                        android:text="优惠：" />
+
+                    <TextView
+                        android:id="@+id/tv_total_discount"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:gravity="left|center"
+                        android:text="￥0.0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:gravity="right|center"
+                        android:text="应付：" />
+
+                    <TextView
+                        android:id="@+id/tv_should_pay_price"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:gravity="left|center"
+                        android:text="￥124.0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:gravity="right|center"
+                        android:text="台号：" />
+
+                    <TextView
+                        android:id="@+id/tv_table_number"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:gravity="left|center"
+                        android:text="32号" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="10dp"
+        android:layout_weight="3.5"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/btn_pos_one"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_btn_number"
+                android:gravity="center"
+                android:text="1"
+                android:textSize="16.0sp" />
+
+            <Button
+                android:id="@+id/btn_pos_four"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_btn_number"
+                android:gravity="center"
+                android:text="4"
+                android:textSize="16.0sp" />
+
+            <Button
+                android:id="@+id/btn_pos_seven"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_btn_number"
+                android:gravity="center"
+                android:text="7"
+                android:textSize="16.0sp" />
+
+            <Button
+                android:id="@+id/btn_pos_zero"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_btn_number"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="16.0sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/btn_pos_two"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_btn_number"
+                android:gravity="center"
+                android:text="2"
+                android:textSize="16.0sp" />
+
+            <Button
+                android:id="@+id/btn_pos_five"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_btn_number"
+                android:gravity="center"
+                android:text="5"
+                android:textSize="16.0sp" />
+
+            <Button
+                android:id="@+id/btn_pos_eight"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_btn_number"
+                android:gravity="center"
+                android:text="8"
+                android:textSize="16.0sp" />
+
+            <Button
+                android:id="@+id/btn_pos_point"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_btn_number"
+                android:gravity="center"
+                android:text="."
+                android:textSize="16.0sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/btn_pos_three"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_btn_number"
+                android:gravity="center"
+                android:text="3"
+                android:textSize="16.0sp" />
+
+            <Button
+                android:id="@+id/btn_pos_six"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_btn_number"
+                android:gravity="center"
+                android:text="6"
+                android:textSize="16.0sp" />
+
+            <Button
+                android:id="@+id/btn_pos_nine"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_btn_number"
+                android:gravity="center"
+                android:text="9"
+                android:textSize="16.0sp" />
+
+            <Button
+                android:id="@+id/btn_pos_delete"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_btn_number"
+                android:gravity="center"
+                android:text="删除"
+                android:textSize="16.0sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.5"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/btn_pos_table_namber"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_number"
+                android:gravity="center"
+                android:text="台号"
+                android:textSize="16.0sp" />
+
+            <Button
+                android:id="@+id/btn_pos_discount"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_btn_number"
+                android:gravity="center"
+                android:text="优惠"
+                android:textSize="16.0sp" />
+
+            <Button
+                android:id="@+id/btn_pos_cancel"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_btn_number"
+                android:gravity="center"
+                android:text="报废"
+                android:textSize="16.0sp" />
+
+            <Button
+                android:id="@+id/btn_pos_take_order"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_btn_number"
+                android:gravity="center"
+                android:text="下单"
+                android:textSize="16.0sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

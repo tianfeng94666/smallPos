@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="gray">#BEBEBE</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="blue">#0EABE8</color>
+    <color name="bg_gray_text">#E5E5E5</color>		<!-- 文字灰色背景 -->
+    <color name="bg_gray_list">#EFEFEF</color>	<!-- 分类列表灰色背景 -->
+    <color name="bg_graylight_list">#FDFDFD</color>	<!-- 点菜列表灰色 -->
+    <color name="gray_txt">#ffaaaaaa</color>
+    <color name="dark_gray">#555555</color>
+
+    <color name="bg_blue">#038DFC</color> <!-- 按钮蓝色 -->
+    <color name="bg_gray">#B5B5B5</color> <!-- 按钮按下时灰色 -->
+    <color name="bg_gray_edtitext">#EEEEEE</color> <!-- 输入框的背景灰色 -->
+    <color name="bg_gray_member">#626262</color> <!-- 会员信息条目深灰色 -->
+    <color name="bg_line">#CBCBCB</color>
+    <color name="stoke">#D7D7D7</color>
+    <color name="rechange_text">#474546</color><!-- 充值字体的颜色，灰色 -->
+    <color name="bg_orange">#F7921C</color><!-- 修改会员信息颜色，橙色 -->
+    <!-- 日历控件 -->
+    <color name="calendar_week_workday">#007AC1</color>
+    <color name="calendar_week_workend">#FFA600</color>
+    <color name="transparent_30">#30000000</color>
+    <color name="textcolor">#C8C8C8</color>
+    <color name="textdd">#CC0000</color>
+
+
+</resources>
