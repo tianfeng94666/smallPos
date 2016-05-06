@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">smallPos</string>
+    <!--indexactivity-->
+    <string name="titile">小猫农贸</string>
+    <string name="MerchantManagement">商户管理</string>
+    <string name="settleaccounts">结账</string>
+    <string name="chargeback">退单</string>
+    <string name="cashbox">钱箱</string>
+    <string name="all">所有</string>
+    <string name="meat">肉类</string>
+    <string name="greens">时蔬</string>
+    <string name="birds">禽类</string>
+    <string name="seafood">海鲜</string>
+    <string name="dryCargo">干货</string>
+    <!--xlistview-->
+    <string name="xlistview_header_hint_normal">下拉刷新</string>
+    <string name="xlistview_header_hint_ready">松开刷新数据</string>
+    <string name="xlistview_header_hint_loading">正在加载...</string>
+    <string name="xlistview_header_last_time">上次更新时间：</string>
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+</resources>
