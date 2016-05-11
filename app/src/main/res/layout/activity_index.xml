@@ -92,6 +92,7 @@
                 android:layout_height="60dp"
                 android:src="@drawable/my_pic"/>
             <TextView
+                android:id="@+id/username_text"
                 android:layout_width="80dp"
                 android:text="yonhuming"
                 android:gravity="center"

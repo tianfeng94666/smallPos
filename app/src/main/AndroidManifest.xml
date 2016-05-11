@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <application
         android:name=".application.LYJApplication"
         android:allowBackup="true"
@@ -13,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.LoginActivity"
-            android:windowSoftInputMode="adjustPan">
+            android:windowSoftInputMode="stateUnspecified">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,7 +22,8 @@
             </intent-filter>
         </activity><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
-        <activity android:name=".activity.IndexActivity"/>
+        <activity android:name=".activity.IndexActivity"
+            android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".activity.ChangepasswordActivity"/>
         <activity android:name=".activity.MerchantManagementActivity"/>
         <meta-data

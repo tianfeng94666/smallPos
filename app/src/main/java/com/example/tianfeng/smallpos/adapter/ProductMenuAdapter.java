@@ -7,6 +7,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.tianfeng.smallpos.R;
+import com.example.tianfeng.smallpos.bean.ProductSortVO;
 
 import java.util.ArrayList;
 
@@ -15,9 +16,9 @@ import java.util.ArrayList;
  */
 public class ProductMenuAdapter extends BaseAdapter {
     private Context context;
-    private ArrayList<String> menus;
+    private ArrayList<ProductSortVO> menus;
 
-    public ProductMenuAdapter(Context context, ArrayList<String> menus) {
+    public ProductMenuAdapter(Context context, ArrayList<ProductSortVO> menus) {
         this.context = context;
         this.menus = menus;
     }
@@ -49,7 +50,7 @@ public class ProductMenuAdapter extends BaseAdapter {
             viewHold = (ViewHold) convertView.getTag();
         }
         TextView textView = viewHold.textView;
-        textView.setText(menus.get(position));
+        textView.setText(menus.get(position).getName());
 
         return convertView;
     }

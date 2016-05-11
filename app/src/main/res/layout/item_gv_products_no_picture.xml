@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/selector_dishes_bg" >
+
+        <ImageView
+            android:id="@+id/item_product_image"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:background="@color/bg_blue"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/item_product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:lines="2"
+            android:maxLines="2"
+            android:textSize="15sp"
+            android:text="小机器人" />
+
+        <TextView
+            android:id="@+id/item_product_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="15dp"
+            android:background="@color/blue"
+            android:text="￥12.0"
+            android:textSize="11sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

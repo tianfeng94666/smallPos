@@ -9,7 +9,7 @@ public class HttpValue {
 	public static int PORT = 8069;
 	public static String SOCKET_IP = "192.168.2.66"; //客显IP
 	public static String IP; // 服务器IP
-	public static String DBNAME; // 服务器数据库
+	public static String DBNAME = "market"; // 服务器数据库
 	public static int SOCKET_PORT; // 收银连接客显的端口
 	public static int SERVER_SOCKET_PORT; // 客显服务器端口
 	// 登陆保存到的session
@@ -34,6 +34,6 @@ public class HttpValue {
 	 * @return
 	 */
 	public static String getHttp() {
-		return "http://" + IP + ":" + PORT;
+		return "http://192.168.1.253:8069";
 	}
 }
