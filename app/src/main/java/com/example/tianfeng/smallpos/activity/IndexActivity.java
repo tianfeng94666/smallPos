@@ -48,7 +48,6 @@ public class IndexActivity extends BaseActivity {
 
     }
 
-
     private void initlayout() {
         //商户管理
         merchantManagement_textview.setOnClickListener(this);

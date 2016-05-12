@@ -97,7 +97,7 @@ public class LoginActivity extends BaseActivity {
                     if (null == username || "null".equals(username)
                             || "".equals(username) || uid == 0) {
                         DialogUtils.showDialog(LoginActivity.this,
-                                "登陆失败，请检查您的登陆信息！");
+                                "登陆失败，请检查您的用户名！");
                     } else {
                         Log.i("登录成功！", "登录成功！");
                         ToastUtils.show(LoginActivity.this, "登陆用户："
@@ -163,11 +163,8 @@ public class LoginActivity extends BaseActivity {
         switch (v.getId()) {
             case R.id.login_but:
                 login();
-                Toast.makeText(this, "------", Toast.LENGTH_LONG).show();
-
                 break;
             case R.id.changepassword_text:
-                Toast.makeText(this, "+++----", Toast.LENGTH_LONG).show();
                 break;
         }
     }

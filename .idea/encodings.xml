@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/app/libs/eventbus-2.4.0.jar" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/libs/glide-3.7.0.jar" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/libs/gson-2.3.jar" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/libs/http-request-3.1.jar" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/tianfeng/smallpos/bean/SessionId.java" charset="UTF-8" />
@@ -18,7 +19,6 @@
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/tianfeng/smallpos/utils/NumberFormatUtil.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/tianfeng/smallpos/utils/SharedPreferencesUtils.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/tianfeng/smallpos/utils/ToastUtils.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/tianfeng/smallpos/utils/UIProgressUtil.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/tianfeng/smallpos/utils/UIProgressUtil.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/add_dishes.xml" charset="GBK" />
@@ -30,14 +30,12 @@
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/blue_edit.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/bluestroke.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/btn_blue.xml" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/btn_blue.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/btn_bluebg.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/btn_bluestroke.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/btn_number_gray.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/btn_payway.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/btn_payway_blue_corners.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/btn_payway_gray_corners.xml" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/btn_seach.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/btn_seach.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/btn_update.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/btn_white.xml" charset="GBK" />
@@ -48,13 +46,11 @@
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/comfirm_btn.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/corners_blue1_bg.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/corners_bluebg.xml" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/corners_bluebg.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/corners_gray.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/corners_gray1_bg.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/corners_gray_dlark_bg.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/corners_graybg.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/corners_orange1_bg.xml" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/corners_white_bottom.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/corners_white_bottom.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/corners_whitebg.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/display_btn.xml" charset="GBK" />
@@ -65,11 +61,9 @@
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/gridview_item_corners.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/nextmonth_button_selector.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/payfinish_bg.xml" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/payfinish_bg.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/premonth_button_selector.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/pressed_btn.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/selector_btn_dialog_usbdiver.xml" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/selector_btn_number.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/selector_btn_number.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/selector_btn_white_stroke_gray_solid.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/selector_dishes_bg.xml" charset="GBK" />
@@ -86,13 +80,13 @@
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/white_tv.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/whitestroke.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_hint.xml" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_hint.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_show_discount.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_usbdevice.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_product_info.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/item_gv_products.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/item_gv_products_no_picture.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/loading_dialogs.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/image.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>

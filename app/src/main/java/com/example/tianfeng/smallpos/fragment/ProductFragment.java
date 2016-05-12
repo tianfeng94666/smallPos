@@ -17,9 +17,11 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 import com.example.tianfeng.smallpos.R;
+import com.example.tianfeng.smallpos.activity.IndexActivity;
 import com.example.tianfeng.smallpos.adapter.GridViewAdapter;
 import com.example.tianfeng.smallpos.adapter.ProductMenuAdapter;
 import com.example.tianfeng.smallpos.base.ProductVO;
+import com.example.tianfeng.smallpos.bean.EventProduct;
 import com.example.tianfeng.smallpos.bean.ProductSortVO;
 import com.example.tianfeng.smallpos.globaldata.HttpValue;
 import com.example.tianfeng.smallpos.http.JsonParams;
@@ -27,6 +29,7 @@ import com.example.tianfeng.smallpos.http.JsonRPCAsyncTask;
 import com.example.tianfeng.smallpos.utils.Const;
 import com.example.tianfeng.smallpos.utils.GsonUtil;
 import com.example.tianfeng.smallpos.utils.LogUtils;
+import com.example.tianfeng.smallpos.utils.NumberFormatUtil;
 import com.example.tianfeng.smallpos.utils.ToastUtils;
 import com.example.tianfeng.smallpos.utils.UIProgressUtil;
 import com.example.tianfeng.smallpos.xlistview.XListView;
@@ -35,6 +38,8 @@ import org.json.JSONException;
 import org.xutils.view.annotation.ViewInject;
 
 import java.util.ArrayList;
+
+import de.greenrobot.event.EventBus;
 
 /**
  * Created by admin on 2016-05-06.
@@ -49,19 +54,24 @@ public class ProductFragment extends Fragment {
     public ArrayList<ProductVO> mProductList = null;
     private ProductMenuAdapter productMenuAdapter;
     private int type = 0; // 0--图片格式； 1--无图格式
+    // 产品数据-分类查询
+    private ArrayList<ProductVO> modifyList;
+    // 产品数据-条件查询
+    private ArrayList<ProductVO> conditionList;
+    private int categorycode = 1;
+    private int productinfocode = 2;
+    private GridViewAdapter mGridViewAdapter;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_product, null);
-
         init(v);
         LoadData();
         return v;
     }
 
-    private int categorycode = 1;
-    private int productinfocode = 2;
-    private GridViewAdapter mGridViewAdapter;
+
     Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -83,6 +93,7 @@ public class ProductFragment extends Fragment {
                         ProductSortVO.EntityProductSortVO.class);
                 LogUtils.i("产品分类列表：", ""
                         + entity.getResult().getRecords().size());
+
 
                 menus = entity.getResult().getRecords();
                 productMenuAdapter = new ProductMenuAdapter(getActivity(), menus);
@@ -108,41 +119,84 @@ public class ProductFragment extends Fragment {
                 LogUtils.i("产品列表：", "" + entity.getResult().getRecords().size());
 
                 mProductList = entity.getResult().getRecords();
-                // if(type == 0){
-                // mGridView.setNumColumns(4);
-                // }else{
-                // mGridView.setNumColumns(2);
-                // }
-                mGridViewAdapter = new GridViewAdapter(getActivity(),
+                mGridViewAdapter = new GridViewAdapter(ProductFragment.this.getActivity(),
                         mProductList, type);
                 mGridView.setAdapter(mGridViewAdapter);
-//                mGridViewAdapter.notifyDataSetChanged();
-
-//                UIProgressUtil.cancelProgress();
-
-//                MallposCashierApplication.instance.setmProductList(mProductList);
-//                MinaSocketClient.getInstances().send(
-//                        new EventSocket(Const.SOCKET_KEY_SHOWDISHES, MallposCashierApplication.instance.getmProductList()));
-
 
             }
         }
 
     };
 
+    /**
+     * 初始化layout
+     * @param view
+     */
     private void init(View view) {
 
         menu_gridview = (GridView) view.findViewById(R.id.menu_gridview);
         mGridView = (GridView) view.findViewById(R.id.gridview_productlist);
+
+        gridlisten();
+    }
+
+    /**
+     * 对gridview 设置监听并处理
+     */
+    public void gridlisten(){
         menu_gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getActivity(), position + "", Toast.LENGTH_LONG).show();
+                //将选中的产品放到eventbus中
+                ProductVO vo = (ProductVO) mGridViewAdapter.getItem(position);
+                EventBus.getDefault().post(new EventProduct(vo));
+
+            }
+        });
+        //菜单的监听设置
+        menu_gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // 查询所有
+                if (position == 0) {
+                    mGridViewAdapter = new GridViewAdapter(getActivity(),
+                            mProductList, type);
+                    mGridView.setAdapter(mGridViewAdapter);
+                    if (modifyList != null) {
+                        modifyList.clear();
+                    }
+                } else {
+                    double groupId = NumberFormatUtil.ParseDouble(menus
+                            .get(position).getId());
+                    modifyList = new ArrayList<ProductVO>();
+                    if (null != mProductList) {
+                        for (ProductVO vo : mProductList) {
+                            String categId = String.valueOf(vo
+                                    .getPublic_categ_id());
+
+                            if ("false".equals(categId) || "".equals(categId)) {
+                                LogUtils.e("分类ID为false:", "" + vo.getName());
+                            } else {
+                                // LogUtils.e("分类ID:", ""+categId);
+                                ArrayList<Object> categ_id = (ArrayList<Object>) vo.getPublic_categ_id();
+                                double _id = NumberFormatUtil.ParseDouble(String.valueOf(categ_id
+                                                .get(0)));
+                                if (0 != categ_id.size() && _id == groupId) {
+                                    modifyList.add(vo);
+                                }
+                            }
+                        }
+                        mGridViewAdapter = new GridViewAdapter(getActivity(),
+                                modifyList, type);
+                        mGridView.setAdapter(mGridViewAdapter);
+                    }
+                }
             }
         });
     }
 
-    @Override
+
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 

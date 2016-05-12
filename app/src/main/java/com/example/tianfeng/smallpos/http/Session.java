@@ -4,11 +4,15 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.tianfeng.smallpos.globaldata.HttpValue;
 import com.example.tianfeng.smallpos.utils.Const;
 
 import org.json.JSONObject;
+import org.xutils.common.Callback;
+import org.xutils.http.RequestParams;
+import org.xutils.x;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -215,15 +219,31 @@ public class Session {
 								+ Const.URL_DB_SELECTOR + HttpValue.DBNAME));
 
 						// 登陆
-						Map<String, String> dataMap = new HashMap<String, String>();
-						dataMap.put("db", HttpValue.DBNAME);
-						dataMap.put("login", username);
-						dataMap.put("password", password);
-						dataMap.put("redirect", HttpValue.getHttp()
-								+ Const.URL_DB_SELECTOR);
-						// 向服务器传入db,login等数据（没有）
-						doPost(HttpValue.getHttp() + Const.URL_LOGIN, dataMap);
+						RequestParams dataMap = new RequestParams(HttpValue.getHttp() + Const.URL_LOGIN);
+						dataMap.addBodyParameter("db", HttpValue.DBNAME);
+						dataMap.addBodyParameter("login", username);
+						dataMap.addBodyParameter("password", password);
+						x.http().post(dataMap, new Callback.CommonCallback<String>() {
+							@Override
+							public void onSuccess(String s) {
+								Toast.makeText(context,"1111111111"+s,Toast.LENGTH_SHORT).show();
+							}
 
+							@Override
+							public void onError(Throwable throwable, boolean b) {
+								Toast.makeText(context,"1111111111",Toast.LENGTH_SHORT).show();
+							}
+
+							@Override
+							public void onCancelled(CancelledException e) {
+								Toast.makeText(context,"1111111111",Toast.LENGTH_SHORT).show();
+							}
+
+							@Override
+							public void onFinished() {
+								Toast.makeText(context,"1111111111",Toast.LENGTH_SHORT).show();
+							}
+						});
 						OpenERPJSONRPC client = new OpenERPJSONRPC();
 
 						// 查询session信息
@@ -247,19 +267,6 @@ public class Session {
 				}
 			}).start();
 
-			// 查询会员信息
-			/*
-			 * JSONObject args = new JSONObject(); args.put("member_id",
-			 * "0001248140");
-			 * 
-			 * JSONObject params2 = new JSONObject(); params2.put("args", args);
-			 * 
-			 * Log.i("params2", ""+params2.toString());
-			 * 
-			 * String result2 = client.OEJsonRpc(
-			 * "http://192.168.1.27:8069/vip_membership/get_member_info",
-			 * "call", params2); Log.i("result2", result2);
-			 */
 
 		} catch (Exception e) {
 			e.printStackTrace();

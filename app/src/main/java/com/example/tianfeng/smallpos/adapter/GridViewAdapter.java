@@ -15,6 +15,10 @@ import com.example.tianfeng.smallpos.globaldata.HttpValue;
 import com.example.tianfeng.smallpos.utils.ImageLoad;
 import com.example.tianfeng.smallpos.utils.NumberFormatUtil;
 
+import org.xutils.common.util.DensityUtil;
+import org.xutils.image.ImageOptions;
+import org.xutils.x;
+
 import java.util.ArrayList;
 
 /**
@@ -57,10 +61,11 @@ public class GridViewAdapter extends BaseAdapter {
             if (type == 0) {
                 convertView = LayoutInflater.from(context).inflate(
                         R.layout.item_gv_products, null);
-            } else if (type == 1) {
-                convertView = LayoutInflater.from(context).inflate(
-                        R.layout.item_gv_products_no_picture, null);
             }
+////            else if (type == 1) {
+//                convertView = LayoutInflater.from(context).inflate(
+//                        R.layout.item_gv_products_no_picture, null);
+//            }
 
             holder.tv_name = (TextView) convertView
                     .findViewById(R.id.item_product_name);
@@ -89,7 +94,19 @@ public class GridViewAdapter extends BaseAdapter {
 //			ImageLoader.getInstance().displayImage(url, holder.iv_image,
 //					DisplayOptionsUtil.getProductImageOptions());
 
-            new ImageLoad(url, holder.iv_image).execute();
+//            new ImageLoad(url, holder.iv_image).execute();
+            ImageOptions options = new ImageOptions.Builder()
+                    // 是否忽略GIF格式的图片
+                    .setIgnoreGif(false)
+                    // 图片缩放模式
+                    .setImageScaleType(ImageView.ScaleType.CENTER_CROP)
+                    // 下载中显示的图片
+                    .setLoadingDrawableId(R.drawable.ic_launcher)
+                    // 下载失败显示的图片
+                    .setFailureDrawableId(R.drawable.ic_launcher)
+                    // 得到ImageOptions对象
+                    .build();
+            x.image().bind(holder.iv_image, url,options);
         }
 
         return convertView;

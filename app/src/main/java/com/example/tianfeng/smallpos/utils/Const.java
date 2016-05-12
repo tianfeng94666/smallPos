@@ -53,7 +53,7 @@ public interface Const {
 	public static String URL_DB_SELECTOR = "/web?db=";
 
 	// 登陆
-	public static String URL_LOGIN = "/web/login";
+	public static String URL_LOGIN = "/pos/login";
 
 	// 获取登陆用户信息
 	public static String URL_GET_SESSION_INFO = "/web/session/get_session_info";
