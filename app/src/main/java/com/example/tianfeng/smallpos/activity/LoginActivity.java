@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.tianfeng.smallpos.R;
 import com.example.tianfeng.smallpos.base.BaseActivity;
+import com.example.tianfeng.smallpos.bean.Loginresult;
 import com.example.tianfeng.smallpos.bean.SessionId;
 import com.example.tianfeng.smallpos.bean.UserSessionVO;
 import com.example.tianfeng.smallpos.globaldata.HttpValue;
@@ -88,29 +89,23 @@ public class LoginActivity extends BaseActivity {
                     DialogUtils.showDialog(LoginActivity.this,
                             "登陆失败，请检查您的登陆信息！");
                 } else {
-                    Log.e("登录：", result);
-                    UserSessionVO.EntityUserVO entity = GsonUtil.jsonToBean(result,
-                            UserSessionVO.EntityUserVO.class);
-                    UserSessionVO user = entity.getResult();
-                    String username = user.getUsername();
-                    uid = NumberFormatUtil.ParseInt(user.getUid());
-                    if (null == username || "null".equals(username)
-                            || "".equals(username) || uid == 0) {
-                        DialogUtils.showDialog(LoginActivity.this,
-                                "登陆失败，请检查您的用户名！");
-                    } else {
+                    Loginresult loginresult = GsonUtil.jsonToBean(result,Loginresult.class);
+                    Loginresult.ResultBean resultBean = loginresult.getResult();
+                    uid = resultBean.getRes().getSession_id();
+                    if(resultBean.isFlag()==true){
                         Log.i("登录成功！", "登录成功！");
-                        ToastUtils.show(LoginActivity.this, "登陆用户："
-                                + username);
-                        SharedPreferencesUtils.saveObjToSp(sp,
-                                Const.SP_USERNAME, username);
+
                         HttpValue.SP_USERID = uid;
 //                        getLoginState();
                         Intent intent = new Intent(LoginActivity.this,
                                 IndexActivity.class);
-                        intent.putExtra(Const.SP_USERNAME, username);
+
                         startActivity(intent);
+                    }else {
+                        DialogUtils.showDialog(LoginActivity.this,
+                                "登入接口调用失败！");
                     }
+
                 }
                 loginBut.setEnabled(true);
                 UIProgressUtil.cancelProgress();

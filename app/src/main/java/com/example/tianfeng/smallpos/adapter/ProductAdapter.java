@@ -24,13 +24,13 @@ import java.util.ArrayList;
 /**
  * Created by admin on 2016-05-11.
  */
-public class GridViewAdapter extends BaseAdapter {
+public class ProductAdapter extends BaseAdapter {
 
     private Context context;
     private ArrayList<ProductVO> mList;
     private int type;
 
-    public GridViewAdapter(Context context, ArrayList<ProductVO> mList, int type) {
+    public ProductAdapter(Context context, ArrayList<ProductVO> mList, int type) {
         super();
         this.context = context;
         this.mList = mList;

@@ -12,13 +12,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ExpandableListAdapter;
 import android.widget.GridView;
 import android.widget.Toast;
 
 import com.example.tianfeng.smallpos.R;
-import com.example.tianfeng.smallpos.activity.IndexActivity;
-import com.example.tianfeng.smallpos.adapter.GridViewAdapter;
+import com.example.tianfeng.smallpos.adapter.ProductAdapter;
 import com.example.tianfeng.smallpos.adapter.ProductMenuAdapter;
 import com.example.tianfeng.smallpos.base.ProductVO;
 import com.example.tianfeng.smallpos.bean.EventProduct;
@@ -31,11 +29,8 @@ import com.example.tianfeng.smallpos.utils.GsonUtil;
 import com.example.tianfeng.smallpos.utils.LogUtils;
 import com.example.tianfeng.smallpos.utils.NumberFormatUtil;
 import com.example.tianfeng.smallpos.utils.ToastUtils;
-import com.example.tianfeng.smallpos.utils.UIProgressUtil;
-import com.example.tianfeng.smallpos.xlistview.XListView;
 
 import org.json.JSONException;
-import org.xutils.view.annotation.ViewInject;
 
 import java.util.ArrayList;
 
@@ -60,7 +55,7 @@ public class ProductFragment extends Fragment {
     private ArrayList<ProductVO> conditionList;
     private int categorycode = 1;
     private int productinfocode = 2;
-    private GridViewAdapter mGridViewAdapter;
+    private ProductAdapter mGridViewAdapter;
 
     @Nullable
     @Override
@@ -119,7 +114,7 @@ public class ProductFragment extends Fragment {
                 LogUtils.i("产品列表：", "" + entity.getResult().getRecords().size());
 
                 mProductList = entity.getResult().getRecords();
-                mGridViewAdapter = new GridViewAdapter(ProductFragment.this.getActivity(),
+                mGridViewAdapter = new ProductAdapter(ProductFragment.this.getActivity(),
                         mProductList, type);
                 mGridView.setAdapter(mGridViewAdapter);
 
@@ -144,11 +139,13 @@ public class ProductFragment extends Fragment {
      * 对gridview 设置监听并处理
      */
     public void gridlisten(){
-        menu_gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
                 //将选中的产品放到eventbus中
                 ProductVO vo = (ProductVO) mGridViewAdapter.getItem(position);
+                Log.v("send Eventbus_product",vo.toString());
                 EventBus.getDefault().post(new EventProduct(vo));
 
             }
@@ -159,7 +156,7 @@ public class ProductFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // 查询所有
                 if (position == 0) {
-                    mGridViewAdapter = new GridViewAdapter(getActivity(),
+                    mGridViewAdapter = new ProductAdapter(getActivity(),
                             mProductList, type);
                     mGridView.setAdapter(mGridViewAdapter);
                     if (modifyList != null) {
@@ -177,7 +174,7 @@ public class ProductFragment extends Fragment {
                             if ("false".equals(categId) || "".equals(categId)) {
                                 LogUtils.e("分类ID为false:", "" + vo.getName());
                             } else {
-                                // LogUtils.e("分类ID:", ""+categId);
+//                                 LogUtils.e("分类ID:", ""+categId);
                                 ArrayList<Object> categ_id = (ArrayList<Object>) vo.getPublic_categ_id();
                                 double _id = NumberFormatUtil.ParseDouble(String.valueOf(categ_id
                                                 .get(0)));
@@ -186,7 +183,7 @@ public class ProductFragment extends Fragment {
                                 }
                             }
                         }
-                        mGridViewAdapter = new GridViewAdapter(getActivity(),
+                        mGridViewAdapter = new ProductAdapter(getActivity(),
                                 modifyList, type);
                         mGridView.setAdapter(mGridViewAdapter);
                     }

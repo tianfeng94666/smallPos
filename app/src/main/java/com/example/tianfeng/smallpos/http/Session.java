@@ -77,7 +77,7 @@ public class Session {
 		String tempLine = null;
 
 //		Log.e("ResponseCode:", "" + httpURLConnection.getResponseCode());
-		if (httpURLConnection.getResponseCode() == 302) {
+		if (httpURLConnection.getResponseCode() == 200) {
 			String key = null;
 			String cookieVal = null;
 			String sessionId = "";
@@ -215,47 +215,19 @@ public class Session {
 						Log.e("DB_URL:", HttpValue.getHttp()
 								+ Const.URL_DB_SELECTOR + HttpValue.DBNAME);
 						// 选择数据库
-						System.out.println(doGet(HttpValue.getHttp()
+						System.out.println("deget:"+doGet(HttpValue.getHttp()
 								+ Const.URL_DB_SELECTOR + HttpValue.DBNAME));
-
-						// 登陆
-						RequestParams dataMap = new RequestParams(HttpValue.getHttp() + Const.URL_LOGIN);
-						dataMap.addBodyParameter("db", HttpValue.DBNAME);
-						dataMap.addBodyParameter("login", username);
-						dataMap.addBodyParameter("password", password);
-						x.http().post(dataMap, new Callback.CommonCallback<String>() {
-							@Override
-							public void onSuccess(String s) {
-								Toast.makeText(context,"1111111111"+s,Toast.LENGTH_SHORT).show();
-							}
-
-							@Override
-							public void onError(Throwable throwable, boolean b) {
-								Toast.makeText(context,"1111111111",Toast.LENGTH_SHORT).show();
-							}
-
-							@Override
-							public void onCancelled(CancelledException e) {
-								Toast.makeText(context,"1111111111",Toast.LENGTH_SHORT).show();
-							}
-
-							@Override
-							public void onFinished() {
-								Toast.makeText(context,"1111111111",Toast.LENGTH_SHORT).show();
-							}
-						});
 						OpenERPJSONRPC client = new OpenERPJSONRPC();
-
-						// 查询session信息
+//
+//						// 查询session信息
 						JSONObject params = new JSONObject();
+						params.put("login", username);
+						params.put("password", password);
+						params.put("terminal","QWERTYUI");
 						result = client.OEJsonRpc(HttpValue.getHttp()
-								+ Const.URL_GET_SESSION_INFO, "call", params);
+								+ Const.URL_LOGIN, "call", params);
 						Log.i("result--------", result);
 
-						// Message msg = new Message();
-						// msg.obj = result;
-						// msg.what = Const.loginCode;
-						// handler.sendMessage(msg);
 					} catch (Exception e) {
 						e.printStackTrace();
 					} finally {

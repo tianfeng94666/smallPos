@@ -120,4 +120,6 @@ public class UserSessionVO implements Serializable {
 		}
 
 	}
+
+
 }
