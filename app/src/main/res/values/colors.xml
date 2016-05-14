@@ -23,8 +23,12 @@
     <color name="calendar_week_workday">#007AC1</color>
     <color name="calendar_week_workend">#FFA600</color>
     <color name="transparent_30">#30000000</color>
-    <color name="textcolor">#C8C8C8</color>
+
     <color name="textdd">#CC0000</color>
 
+    <!--主色调-->
+    <color name="maincolor">#019098</color>
+    <color name="textcolor">#7B7F88</color>
+    <color name="but_confirm">#FF6B6B</color>
 
 </resources>

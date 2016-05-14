@@ -297,41 +297,29 @@
             android:orientation="vertical" >
 
             <Button
-                android:id="@+id/btn_pos_table_namber"
+                android:id="@+id/btn_pos_cashpayment"
                 android:layout_width="fill_parent"
                 android:layout_height="0.0dip"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_number"
                 android:gravity="center"
-                android:text="台号"
+                android:text="现金支付"
                 android:textSize="16.0sp" />
 
             <Button
-                android:id="@+id/btn_pos_discount"
+                android:id="@+id/btn_pos_memberpayment"
                 android:layout_width="fill_parent"
                 android:layout_height="0.0dip"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
                 android:background="@drawable/selector_btn_number"
                 android:gravity="center"
-                android:text="优惠"
+                android:text="会员支付"
                 android:textSize="16.0sp" />
 
             <Button
-                android:id="@+id/btn_pos_cancel"
-                android:layout_width="fill_parent"
-                android:layout_height="0.0dip"
-                android:layout_gravity="center"
-                android:layout_margin="1dp"
-                android:layout_weight="1"
-                android:background="@drawable/selector_btn_number"
-                android:gravity="center"
-                android:text="报废"
-                android:textSize="16.0sp" />
-
-            <Button
-                android:id="@+id/btn_pos_take_order"
+                android:id="@+id/btn_pos_Alipay"
                 android:layout_width="fill_parent"
                 android:layout_height="0.0dip"
                 android:layout_gravity="center"
@@ -339,7 +327,19 @@
                 android:layout_weight="1"
                 android:background="@drawable/selector_btn_number"
                 android:gravity="center"
-                android:text="下单"
+                android:text="支付宝支付"
+                android:textSize="16.0sp" />
+
+            <Button
+                android:id="@+id/btn_pos_UnionPay"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="center"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_btn_number"
+                android:gravity="center"
+                android:text="银联支付"
                 android:textSize="16.0sp" />
         </LinearLayout>
     </LinearLayout>

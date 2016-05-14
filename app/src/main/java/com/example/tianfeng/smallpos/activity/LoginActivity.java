@@ -40,16 +40,8 @@ import java.util.List;
  */
 
 public class LoginActivity extends BaseActivity {
-
-
-    public TextView textView;
-
     public EditText usernameEdit;
-
     public EditText passwordEdit;
-
-    public TextView textView2;
-
     public Button loginBut;
     /**
      * 用户id
@@ -58,15 +50,11 @@ public class LoginActivity extends BaseActivity {
     /**
      * session 收银id 获取
      */
-
     private int SessionRequestCode = 2;
     public TextView changepasswordText;
     private SharedPreferences sp;
-
     private String cashName;
-
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
@@ -76,14 +64,11 @@ public class LoginActivity extends BaseActivity {
         init();
 
     }
-
-
     Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             if (msg.what == Const.loginCode) {
-
                 String result = (String) msg.obj;
                 if (null == result || "".equals(result)) {
                     DialogUtils.showDialog(LoginActivity.this,
@@ -99,11 +84,10 @@ public class LoginActivity extends BaseActivity {
 //                        getLoginState();
                         Intent intent = new Intent(LoginActivity.this,
                                 IndexActivity.class);
-
                         startActivity(intent);
                     }else {
                         DialogUtils.showDialog(LoginActivity.this,
-                                "登入接口调用失败！");
+                                resultBean.getInfo());
                     }
 
                 }
@@ -149,7 +133,8 @@ public class LoginActivity extends BaseActivity {
         String et_name = (null == SharedPreferencesUtils.readObjFromSp(sp,
                 Const.SP_USERNAME) ? "" : ""
                 + SharedPreferencesUtils.readObjFromSp(sp, Const.SP_USERNAME));
-        usernameEdit.setText(et_name);
+//        usernameEdit.setText(et_name);
+        usernameEdit.setText("admin");
     }
 
     @Override
@@ -189,7 +174,6 @@ public class LoginActivity extends BaseActivity {
         new Session().login(username, password,
                 LoginActivity.this, mHandler);
     }
-
     /**
      * 获取登录收银session id
      */

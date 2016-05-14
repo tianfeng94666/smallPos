@@ -74,12 +74,11 @@ public class ProductInfoListAdapter extends BaseAdapter {
         DiscountVO discountVO = info.getDiscountVO();
         ProductVO productVO = info.getProductVO();
         holder.tv_name.setText(productVO.getName());
-        holder.tv_price.setText(productVO.getPrice());
-        if(holder.cb_select.isChecked() == false){
-            holder.cb_select.setChecked(true);
-        }else{
-            holder.cb_select.setChecked(false);
-        }
+        holder.tv_price.setText(productVO.getList_price());
+        holder.tv_weight.setText(productVO.getTo_weight());
+        holder.tv_money.setText(Double.parseDouble(productVO.getList_price())*1.5+"");
+        holder.cb_select.setChecked(info.getSelect());
+
 
         return convertView;
     }

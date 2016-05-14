@@ -15,6 +15,16 @@ public class ProductInfoVO implements Serializable {
 
     private DiscountVO discountVO;
 
+    public Boolean getSelect() {
+        return isSelect;
+    }
+
+    public void setSelect(Boolean select) {
+        isSelect = select;
+    }
+
+    private Boolean isSelect  = false;
+
     private int size = 0;
 
     public ProductInfoVO() {
@@ -44,6 +54,7 @@ public class ProductInfoVO implements Serializable {
     public void setSize(int size) {
         this.size = size;
     }
+
 
 }
 

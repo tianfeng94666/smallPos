@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_should_pay"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/maincolor"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:text="合计：￥"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/should_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:text="222.40"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_cashpay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="35dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_payway"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_weight="8"
+                android:gravity="end"
+                android:text="现金支付："
+                android:textColor="@color/textcolor"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/inputmoney"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:background="@null"
+                android:digits="0123456789."
+                android:gravity="left|center"
+                android:maxLength="9"
+                android:paddingRight="0dp"
+                android:text=""
+                android:textColor="#479EFF"></EditText>
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/bg_line" />
+
+        <LinearLayout
+            android:id="@+id/rl_back_pay"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="8"
+                android:gravity="end"
+                android:text="找零："
+                android:textColor="@color/textcolor"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_backmoney"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@id/text2"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="00"
+                android:textColor="#474747"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/but_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/but_confirm"
+            android:text="确定" />
+
+        <Button
+            android:id="@+id/but_cancle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:background="@color/maincolor"
+            android:text="取消" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:background="@drawable/but_cashpay"
+                android:text="1" />
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:background="@drawable/but_cashpay"
+                android:text="2" />
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+
+                android:background="@drawable/but_cashpay"
+                android:text="3" />
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:background="@drawable/but_cashpay"
+                android:text="4" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:background="@drawable/but_cashpay"
+                android:text="1" />
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:background="@drawable/but_cashpay"
+                android:text="2" />
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+
+                android:background="@drawable/but_cashpay"
+                android:text="3" />
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:background="@drawable/but_cashpay"
+                android:text="4" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:background="@drawable/but_cashpay"
+                android:text="1" />
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:background="@drawable/but_cashpay"
+                android:text="2" />
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+
+                android:background="@drawable/but_cashpay"
+                android:text="3" />
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:background="@drawable/but_cashpay"
+                android:text="4" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:background="@drawable/but_cashpay"
+                android:text="1" />
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:background="@drawable/but_cashpay"
+                android:text="2" />
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+
+                android:background="@drawable/but_cashpay"
+                android:text="3" />
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:background="@drawable/but_cashpay"
+                android:text="4" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
